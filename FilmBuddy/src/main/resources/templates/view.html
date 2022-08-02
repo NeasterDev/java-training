@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Actors Page</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <!-- page title -->
+    <h1>Actors by name</h1>
+    <!-- link back to the home page -->
+    <a href="/" >Home</a>
+    <!-- thymeleaf framework starts -->
+    <!-- if the actors (which we pass through from our controller) is not empty, then do the code -->
+    <div th:if="${!actors.empty}">
+        <!-- creates a table to hold the values from the database -->
+        <table>
+            <!-- makes a row for the table -->
+            <tr>
+                <!-- row headers for the actor and title -->
+				<th>Actor</th>
+                <th>Film</th>
+            </tr>
+            <!-- for each loop in thymeleaf, for each actor in the actors list do the thing -->
+            <tr th:each="actor : ${actors}">
+                <!-- Prints out the first and last name of the actor, separated by a space -->
+                <td th:text="${actor.first_name + ' ' + actor.last_name}">First Name</td>
+                <!-- print out the title of the movie that the actor is in -->
+                <td th:text="${actor.title}">Title</td>
+            </tr>
+        </table>
+    </div>
+    <!-- if the actors list is empty -->
+    <div th:if="${actors.empty}">
+        <!-- print no actors found to the page -->
+        <h3>No actors found!</h3>
+    </div>
+</body>
+</html>

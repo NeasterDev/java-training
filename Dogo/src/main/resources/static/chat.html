@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <!-- import for bootstrap library -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<body>  
+    <!-- Container for input to enter message id -->
+    <div class="mt-4 d-flex justify-content-center">
+        <!-- Label for message id input -->
+        <label for="id">Enter message ID</label>
+        <!-- input box for id -->
+        <input class="ml-2" id="id" name="id" type="text" />
+        <!-- Button to get data from database -->
+        <button class="search btn btn-primary">Search</button>
+    </div>
+        <!-- flex container to hold name and chat content -->
+        <div class="d-flex flex-column justify-content-center align-items-center">
+            <!-- header to hold name value -->
+            <h1 id="name"></h1>
+            <!-- header to hold chat content -->
+            <h1 id="chat"></h1>
+    </div>
+    
+    <!-- import for jquery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- import for script file we created -->
+	<script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Actors Page</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <!-- main page title -->
+    <h1>Actors</h1>
+    <!-- link to the second page where the user can view each actors name with the names of the films they were in -->
+    <a href="/actors" >View actors by name</a>
+    <!-- thymeleaf if the actors list that we send from the controller is not empty, do the code -->
+    <div th:if="${!actors.empty}">
+        <!-- create a table to hold the actor data -->
+        <table>
+            <!-- first row in the table holds the title of each column -->
+            <tr>
+                <!-- titles for actorID, first name, last name, and the last update -->
+                <th>Actor Id</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Last Update</th>
+            </tr>
+            <!-- thymeleaf for each actor in the actors list -->
+            <tr th:each="actor : ${actors}">
+                <!-- insert the values for the actorID, first name, last name, and last update from the database into the table -->
+                <td th:text="${actor.actor_id}">Actor Id</td>
+                <td th:text="${actor.first_name}">First Name</td>
+                <td th:text="${actor.last_name}">Last Name</td>
+                <td th:text="${actor.last_update}">Last Update</td>
+            </tr>
+        </table>
+    </div>
+    <!-- if the actors list is empty, show no actors found to the user -->
+    <div th:if="${actors.empty}">
+        <h3>No actors found!</h3>
+    </div>
+</body>
+</html>

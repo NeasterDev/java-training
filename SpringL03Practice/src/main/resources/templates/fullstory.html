@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Home Page</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+	<form action="#" th:action="@{/story}" th:object="${story}" method="post">
+		<input th:field="*{name}" placeholder="Name" />
+		<input th:field="*{animal}" placeholder="Animal" />
+		<input th:field="*{year}" placeholder="Year" />
+		<button>Submit</button>
+	</form>
+	<a href="/beginning">Beginning...</a>
+</body>
+
+</html>
